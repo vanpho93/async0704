@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "pg": "^6.2.2"
+    "pg": "^6.2.2",
+    "then-request": "^2.2.0"
   }
 }
