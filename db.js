@@ -1,5 +1,6 @@
 // queryDB('sql').then()
 const pg = require('pg');
+const fs = require('fs');
 
 const config = {
     user: 'postgres',
@@ -37,5 +38,21 @@ function queryDB(sql, arrayData) {
 }
 
 queryDB('SELECT * FROM "HotGirl"', [])
-.then(result => console.log(result.rows))
-.catch(err => console.log(err));
+.then(result => saveText('b.txt', JSON.stringify(result.rows)))
+.then(a => 'AAAAAAA')
+.then(b => console.log(b))
+.then(c => console.log(c))
+.then(() => 10)
+.then(d => console.log(d))
+.catch(err => 1000)
+.then(a => console.log(a));
+
+
+function saveText(filename, text) {
+    return new Promise((resolve, reject) => {
+        fs.writeFile(filename, text, err => {
+            if (err) return reject(err);
+            resolve('THANH_CONG');
+        });
+    });
+}
