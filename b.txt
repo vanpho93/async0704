@@ -1,1 +1,0 @@
-[{"id":2,"name":"Ngoc Trinh","image":"3.jpg","like":2,"dislike":3},{"id":3,"name":"Chipu","image":"4.png","like":4,"dislike":3},{"id":5,"name":"Mai Phuong Thuy","image":"1.jpg","like":97,"dislike":8},{"id":4,"name":"Midu","image":"5.png","like":17,"dislike":3},{"id":1,"name":"Elly Tran","image":"2.jpeg","like":26,"dislike":3}]
