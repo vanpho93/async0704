@@ -45,11 +45,19 @@ function queryAndSave(sql, arrayData, filename) {
 // .catch(err => console.log(err.toString()));
 
 const querySave = async (sql, arrayData, filename) => {
-    const rows = await queryDB(sql, arrayData);
-    const text = JSON.stringify(rows);
-    const kq =  await saveText(filename, text);
-    console.log(kq);
+    try {
+        const rows = await queryDB(sql, arrayData);
+        const text = JSON.stringify(rows);
+        const kq =  await saveText(filename, text);
+        return Promise.resolve(kq);
+    } catch (e) {
+        return Promise.reject(e);
+    }
 }
 
 
-querySave('SELECT * FROM "HotGirl"', [], 'c.txt');
+const kqua = querySave('SELECT * FROM "HotGirlss"', [], 'c.txt');
+
+kqua
+.then(a => console.log('aaa: ' + a))
+.catch(err => console.log(err + ''));

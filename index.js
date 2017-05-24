@@ -1,13 +1,10 @@
-const fs = require('fs');
+const express = require('express');
 
-function read(filename, cb) { 
-    fs.readFile(filename, 'utf8', (err, data) => {
-        if (err) return cb(err);
-        cb(undefined, data);
-    });
-}
+const app = express();
 
-read('data.txt', (err, data) => {
-    if (err) return console.log(err);
-    console.log(data);
-});
+app.use(express.static('public'));
+app.use('/bai1', require('./controller/bai1'));
+
+app.set('view engine', 'ejs');
+
+app.listen(3000, () => console.log('START!!!'))
