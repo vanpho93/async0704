@@ -68,9 +68,24 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const mul = __webpack_require__(1);
+
+let a = mul(3, 4)
+console.log(a);
+console.log('1234 adcs');
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports) {
 
-console.log('1234 adcs');
+function mul(a, b) {
+    return a * b;
+}
+
+module.exports = mul;
+
 
 /***/ })
 /******/ ]);
